@@ -17,5 +17,18 @@ document.querySelectorAll('.tab-bar').forEach(function(item) {
 
             })
         })
+    } else {
+        children.forEach((childItem, key) => {
+            childItem.addEventListener('click', () => {
+                let color = getComputedStyle(document.documentElement).getPropertyValue(`--theme-${childItem.CDATA_SECTION_NODE.theme}`);
+
+                circleIndicator.classList.remove('animate');
+                circleIndicator.style.marginLeft = ((25 + childItem.clientWidth) * key) + "px";
+                circleIndicator.classList.add('animate');
+
+                document.querySelector('body').style.backgroundColor = color;
+                lineIndicator.style.backgroundColor = color;
+            })
+        })
     }
 })
