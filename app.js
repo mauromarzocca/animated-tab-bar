@@ -6,7 +6,7 @@ document.querySelectorAll('.tab-bar').forEach(function(item) {
     if(item.classList.contains('tab-bar-vertical')) {
         children.forEach((childItem, key) => {
             childItem.addEventListener('click', () => {
-                let color = getComputedStyle(document.documentElement).getPropertyValue(`--theme-${childItem.CDATA_SECTION_NODE.theme}`);
+                let color = getComputedStyle(document.documentElement).getPropertyValue(`--theme-${childItem.dataset.theme}`);
 
                 lineIndicator.classList.remove('animate');
                 lineIndicator.style.marginTop = ((25 + childItem.clientHeight) * key) + "px";
@@ -20,7 +20,7 @@ document.querySelectorAll('.tab-bar').forEach(function(item) {
     } else {
         children.forEach((childItem, key) => {
             childItem.addEventListener('click', () => {
-                let color = getComputedStyle(document.documentElement).getPropertyValue(`--theme-${childItem.CDATA_SECTION_NODE.theme}`);
+                let color = getComputedStyle(document.documentElement).getPropertyValue(`--theme-${childItem.dataset.theme}`);
 
                 circleIndicator.classList.remove('animate');
                 circleIndicator.style.marginLeft = ((25 + childItem.clientWidth) * key) + "px";
