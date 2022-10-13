@@ -1,1 +1,66 @@
+:root {
+    --theme-1: #ae5ef2;
+    --theme-2: #2f8fcf;
+    --theme-3: #2fcf51;
+    --theme-4: #f2e75e;
+    --theme-5: #e95181;
+    --theme-6: #ff8249;
+    --theme-7: #5ef29c;
+    --theme-8: #747dff;
+    --theme-9: #e95181;
+    --theme-10: #a98ebf;
+}
 
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-1);
+    transition: background-color 1s;
+}
+
+.tab-bar {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-radius: 15px;
+    position: relative;
+    gap: 25px;
+    box-shadow: 0 10px 40px -20px #00000091;
+
+    &__circle-indicator {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: var(--theme-1);
+        z-index: 0;
+        transition: all .3s;
+        opacity: .7;
+    }
+
+    &__item {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+    }
+
+    &-vertical {
+        flex-direction: column;
+    }
+
+    &__line-indicator {
+        background-color: var(--theme-6);
+        position: absolute;
+        width: 10px;
+        height: 60px;
+        left: 2px;
+        transition: all .3s cubic-bezier(.25, .25, .25, 1.50);
+    }
+}
